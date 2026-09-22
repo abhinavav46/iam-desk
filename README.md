@@ -13,6 +13,9 @@ A local AI agent for the identity and access management (IAM) and cybersecurity 
                                           BM25 search over
                                           knowledge/*.md
 ```
+# **Website**
+<img width="1908" height="861" alt="image" src="https://github.com/user-attachments/assets/d0aadad7-bdf6-4956-a7a6-6a6dfcd54676" />
+<img width="1917" height="861" alt="image" src="https://github.com/user-attachments/assets/5f11893e-edc3-4426-a266-383a669f526f" />
 
 ## What it does
 
