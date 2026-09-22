@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IAM Desk — by Abhinav A V</title>
+<meta name="author" content="Abhinav A V" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2218%22 font-size=%2218%22>🔐</text></svg>">
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">◈</span>
+        <div>
+          <div class="brand-name">IAM Desk</div>
+          <div class="brand-sub">local identity &amp; security assistant</div>
+        </div>
+      </div>
+
+      <button class="new-chat" id="newChat">+ New conversation</button>
+
+      <div class="side-section">
+        <div class="side-label">Status</div>
+        <div class="status-row" id="llmStatus"><span class="dot dot-unknown"></span>checking model…</div>
+        <div class="status-row" id="kbStatus"><span class="dot dot-unknown"></span>checking knowledge base…</div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-label">Commands</div>
+        <button class="chip" data-insert="/help">/help</button>
+        <button class="chip" data-insert="/jwt ">/jwt &lt;token&gt;</button>
+        <button class="chip" data-insert="/sod Create Vendor, Approve Payment">/sod list</button>
+      </div>
+
+      <div class="side-section">
+        <div class="side-label">Ask about</div>
+        <button class="chip" data-prompt="What is the difference between SAML and OIDC?">SAML vs OIDC</button>
+        <button class="chip" data-prompt="Explain the joiner mover leaver process in SailPoint.">JML in SailPoint</button>
+        <button class="chip" data-prompt="What is zero standing privilege and why does it matter for PAM?">Zero standing privilege</button>
+        <button class="chip" data-prompt="How does Kerberoasting work and how do I detect it?">Kerberoasting</button>
+        <button class="chip" data-prompt="What is separation of duties and how does SailPoint enforce it?">SoD basics</button>
+        <button class="chip" data-prompt="Walk me through incident response for a compromised privileged account.">IR: compromised account</button>
+        <button class="chip" data-prompt="What is the difference between SAST, DAST and SCA?">SAST vs DAST vs SCA</button>
+      </div>
+
+      <div class="side-footer">
+        Runs entirely on this device. Nothing is sent to the cloud.
+        <div class="side-credit">Built by <strong>Abhinav A V</strong></div>
+      </div>
+    </aside>
+
+    <main class="chat">
+      <div class="chat-scroll" id="chatScroll">
+        <div class="msg msg-agent" id="welcomeMsg">
+          <div class="avatar">◈</div>
+          <div class="bubble">
+            <p>I'm IAM Desk — a local assistant for identity and access management and cybersecurity: authentication, authorization, SSO/federation, SailPoint and IGA, PAM, and identity attacks.</p>
+            <p>Ask a question, or try a command like <code>/jwt</code> or <code>/sod</code>. Everything runs on this machine.</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="composer" id="composer">
+        <textarea id="input" rows="1" placeholder="Ask about IAM, SSO, SailPoint, PAM, or identity attacks… ( / for commands )" autofocus></textarea>
+        <button type="submit" id="sendBtn" aria-label="Send">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 11.5L20.5 3 15 20.5l-4-7.5-8-1.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+      <div class="composer-hint">Enter to send · Shift+Enter for a new line</div>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
