@@ -105,20 +105,6 @@ iam-desk/
 ```bash
 python -m unittest discover -s tests -v
 ```
-A GitHub Actions workflow (`.github/workflows/tests.yml`) runs the same suite on every push.
-
-## Publishing to GitHub
-
-```bash
-cd iam-desk
-git init
-git add .
-git commit -m "Initial commit: IAM Desk local AI agent"
-git branch -M main
-git remote add origin https://github.com/<your-username>/iam-desk.git
-git push -u origin main
-```
-`.env` and `.venv/` are already excluded via `.gitignore`, so no local secrets or environments get committed.
 
 ## Notes and limitations
 
